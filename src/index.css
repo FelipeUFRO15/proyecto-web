@@ -110,3 +110,16 @@ a:hover {
   font-size: 1.5rem;
   margin: 0 0 2rem 0;
 }
+.userLogin{
+  width: 40%;
+  position: relative;
+  padding: 50px;
+}
+.userRegister{
+  width: 20%;
+  position: relative;
+  padding: 50px;
+}
+.loginbutton{
+  width: 50%;
+}

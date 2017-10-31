@@ -1,0 +1,54 @@
+<div ng-cloak layout-gt-sm="row" layout="column" md-theme="proyecto">
+
+  <div flex-gt-sm="50" flex>
+    <md-content>
+        <center>
+          <h2>Iniciar Sesión</h2>
+          <img class="userLogin" ng-src="{{ vm.imageUser }}" class="md-avatar">
+        </center>
+        <md-input-container class="md-block" flex-offset="25" flex="50">
+          <label>Email</label>
+          <input>
+        </md-input-container>
+        <md-input-container class="md-block" flex-offset="25" flex="50">
+          <label>Contraseña</label>
+          <input type="password">
+        </md-input-container>
+        <center><md-button class="md-raised md-primary loginbutton" ui-sref="principal">Iniciar Sesión</md-button></center>
+        
+    </md-content>
+  </div>
+
+  <md-divider></md-divider>
+
+  <div flex-gt-sm="50" flex>
+    <md-content>
+      <center>
+        <h2>Registrarse</h2>
+        <img class="userRegister" ng-src="{{ vm.imageUser }}" class="md-avatar">
+      </center>
+      <md-input-container class="md-block" flex-offset="25" flex="50">
+        <label>Nombre</label>
+        <input>
+      </md-input-container>
+      <md-input-container class="md-block" flex-offset="25" flex="50">
+        <label>Email</label>
+        <input>
+      </md-input-container>
+      <md-input-container class="md-block" flex-offset="25" flex="50">
+        <label>Contraseña</label>
+        <input type="password">
+      </md-input-container>
+      <md-input-container class="md-block" flex-offset="25" flex="50">
+        <label>Repetir Contraseña</label>
+        <input type="password">
+      </md-input-container>
+      <md-input-container class="md-block" flex-offset="25" flex="50">
+        <label>Institución</label>
+        <input>
+      </md-input-container>
+      <center><md-button class="md-raised md-primary loginbutton">Registrarse</md-button></center>
+    </md-content>
+  </div>
+
+</div>
