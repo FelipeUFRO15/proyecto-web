@@ -15,5 +15,9 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('principal', {
       url: '/tabs',
       component: 'myTab'
+    })
+    .state('administrador', {
+      url: '/administrator',
+      component: 'administrator'
     });
 }

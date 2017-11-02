@@ -1,0 +1,28 @@
+<md-content class="md-padding" layout-xs="column" layout="row">
+  <div flex-xs flex-gt-xs="25" layout="column">
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Agregar Asignatura</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-input-container class="md-block" flex-offset="10" flex="80">
+          <label>Nombre de la Asignatura</label>
+          <input ng-model="asignatura.nombre">
+      </md-input-container>
+      <md-input-container class="md-block" flex-offset="10" flex="80">
+          <label>Nombre del Docente</label>
+          <input ng-model="asignatura.docente">
+      </md-input-container>
+      <md-button class="md-raised md-primary" ng-click="vm.add(asignatura)">AÑADIR</md-button>
+    </md-card>
+  </div>
+  <div flex-xs flex-gt-xs="30" flex-offset="25" layout="column">
+    <md-card ng-repeat="asignatura in vm.asignaturas" layout="column">
+      <center><span class="md-headline asigtitle">{{ asignatura.nombre }}</span></center>
+      <md-divider></md-divider>
+      <center><p><strong>Docente:</strong> {{ asignatura.docente }}</p></center>
+      <center><md-button class="md-raised md-primary seemore" >VER CONTENIDO</md-button></center>
+    </md-card>
+  </div>
+</md-content>
