@@ -5,15 +5,15 @@ angular
 /** @ngInject */
 function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true).hashPrefix('!');
-  $urlRouterProvider.otherwise('login');
+  $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('login', {
+    .state('app', {
       url: '/login',
-      component: 'login'
+      component: 'app'
     })
-    .state('principal', {
-      url: '/tabs',
-      component: 'myTab'
+    .state('login', {
+    	url: '/',
+    	component: 'login'
     });
 }

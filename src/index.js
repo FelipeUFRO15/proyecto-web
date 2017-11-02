@@ -5,8 +5,4 @@ angular
       .primaryPalette('indigo')
       .accentPalette('teal')
       .warnPalette('pink');
-    $mdThemingProvider.theme('tabs')
-      .primaryPalette('indigo')
-      .accentPalette('green')
-      .warnPalette('pink');
   });
