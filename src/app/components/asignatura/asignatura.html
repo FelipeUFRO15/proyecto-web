@@ -1,0 +1,81 @@
+<div style="padding-top: 3em; padding-left: 25em">
+	<md-content class="md-padding" layout-xs="column" layout="row">
+		<div flex-xs flex-gt-xs="25" layout="column">
+			<md-card>
+				<md-card-title>
+					<md-card-title-text>
+						<span class="md-headline">Agregar Apunte</span>
+					</md-card-title-text>
+				</md-card-title>
+				<md-input-container class="md-block" flex-offset="10" flex="80">
+					<label>Titulo de Apunte</label>
+					<input ng-model="apunte.titulo">
+				</md-input-container>
+				<md-input-container class="md-block" flex-offset="10" flex="80">
+					<label>Contenido</label>
+					<input ng-model="apunte.contenido">
+				</md-input-container>
+				<md-button class="md-raised md-primary" ng-click="vm.addApunte(apunte)">AÑADIR</md-button>
+			</md-card>
+		</div>
+		<div flex-xs flex-gt-xs="30" layout="row">
+			<md-card ng-repeat="apunte in vm.apuntes" layout="column">
+				<center><span class="md-headline asigtitle">{{ apunte.titulo }}</span></center>
+				<md-divider></md-divider>
+				<center><p> {{ apunte.contenido }} </p></center>
+			</md-card>
+		</div>
+	</md-content>
+	<md-content class="md-padding" layout-xs="column" layout="row">
+		<div flex-xs flex-gt-xs="25" layout="column">
+			<md-card>
+				<md-card-title>
+					<md-card-title-text>
+						<span class="md-headline">Agregar Nota</span>
+					</md-card-title-text>
+				</md-card-title>
+				<md-input-container class="md-block" flex-offset="10" flex="80">
+					<label>Nombre de la Nota</label>
+					<input ng-model="nota.nombre">
+				</md-input-container>
+				<md-input-container class="md-block" flex-offset="10" flex="80">
+					<label>Nota</label>
+					<input ng-model="nota.valor">
+				</md-input-container>
+				<md-button class="md-raised md-primary" ng-click="vm.addNota(nota)">AÑADIR</md-button>
+			</md-card>
+		</div>
+		<div flex-xs flex-gt-xs="30" layout="row">
+			<md-card ng-repeat="nota in vm.notas" layout="column">
+				<center><span class="md-headline asigtitle">{{ nota.nombre }}</span></center>
+				<md-divider></md-divider>
+				<center><p> {{ nota.valor }} </p></center>
+			</md-card>
+		</div>
+	</md-content>
+	<center>
+		<md-content class="md-padding" layout-xs="column" layout="row">
+			<div flex-xs flex-gt-xs="25" layout="row">
+				<md-card class="cardtool">
+					<md-card-title>
+						<md-button class="md-raised md-primary">PROMEDIAR</md-button>
+						
+					</md-card-title>
+					<md-divider></md-divider>
+						<p style="padding-left: 10px;">0</p>				
+				</md-card>
+				<md-card class="cardtool">
+					<md-card-title>
+						<md-button class="md-raised md-primary">AÑADIR HORAS</md-button>
+						
+					</md-card-title>
+						<md-input-container  flex="80">
+							<label>Cantidad</label>
+							<input>
+						</md-input-container>
+				</md-card>
+			</div>
+		</md-content> 
+	</center>
+	 
+</div>
