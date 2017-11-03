@@ -4,15 +4,16 @@
 			<md-card>
 				<md-card-title>
 					<md-card-title-text>
-						<span class="md-headline">Agregar Asignatura</span>
+						<span class="md-headline">Agregar apunte</span>
 					</md-card-title-text>
 				</md-card-title>
 				<md-input-container class="md-block" flex-offset="10" flex="80">
-					<label>Nombre de la Asignatura</label>
+					<label>Título del apunte</label>
 					<input ng-model="asignatura.nombre">
 				</md-input-container>
+				<md-datepicker ng-model="ctrl.myDate" md-placeholder="Fecha del apunte"></md-datepicker>
 				<md-input-container class="md-block" flex-offset="10" flex="80">
-					<label>Nombre del Docente</label>
+					<label>Contenido del apunte</label>
 					<input ng-model="asignatura.docente">
 				</md-input-container>
 				<md-button class="md-raised md-primary" ng-click="vm.add(asignatura)">AÑADIR</md-button>
@@ -28,4 +29,3 @@
 		</div>
 	</md-content> 
 </div>
-

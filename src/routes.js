@@ -19,5 +19,13 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('administrador', {
       url: '/administrator',
       component: 'administrator'
+    })
+    .state('sideBar', {
+      url: '/sideBar',
+      component: 'mySidebar'
+    })
+    .state('apuntes', {
+      url: '/apuntes',
+      component: 'apuntes'
     });
 }
