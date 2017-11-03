@@ -2,12 +2,18 @@
   'use strict';
 
   angular
-	.module('app')
-	.component('asignatura', {
-  templateUrl: 'app/components/asignatura/asignatura.html',
-  controller: asignaturaCtrl,
-  controllerAs: 'vm'
-});
+    .module('app')
+    .component('asignatura', {
+    templateUrl: 'app/components/asignatura/asignatura.html',
+    controller: asignaturaCtrl,
+    controllerAs: 'vm'
+  })
+  .config(function ($mdThemingProvider) {
+    $mdThemingProvider.theme('asignatura')
+      .primaryPalette('purple')
+      .accentPalette('pink')
+      .warnPalette('red');
+  });
 
   function asignaturaCtrl() {
     var vm = this;

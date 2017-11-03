@@ -7,6 +7,12 @@
     templateUrl: 'app/components/apuntes/apuntes.html',
     controller: apuntesCtrl,
     controllerAs: 'vm'
+  })
+  .config(function ($mdThemingProvider) {
+    $mdThemingProvider.theme('apunte')
+      .primaryPalette('purple')
+      .accentPalette('pink')
+      .warnPalette('red');
   });
 
   function apuntesCtrl() {

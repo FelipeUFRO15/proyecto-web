@@ -1,7 +1,7 @@
 angular
   .module('app', ['ui.router', 'ngMaterial', 'ngResource'])
   .config(function ($mdThemingProvider) {
-    $mdThemingProvider.theme('proyecto')
+    $mdThemingProvider.theme('red')
       .primaryPalette('indigo')
       .accentPalette('teal')
       .warnPalette('pink');

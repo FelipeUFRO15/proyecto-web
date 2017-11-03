@@ -1,5 +1,5 @@
 <my-sidebar></my-sidebar>
-<div style="padding-top: 4em; padding-left: 4em" flex-offset="5">
+<div style="padding-top: 4em; padding-left: 4em" flex-offset="5" md-theme="asignatura">
 		
 		<md-content class="md-padding" layout-xs="column" layout="column" flex="50" flex-offset="25">
 			<center>
@@ -27,7 +27,7 @@
 						<p style="padding-left: 10px;">{{ vm.horasp }} horas necesarias para aprobar</p>
 						<md-input-container  flex="50">
 							<label>Procentaje Asistencia</label>
-							<input ng-model="hora">
+							<input ng-model="hora" type="number">
 						</md-input-container>
 						<md-button class="md-raised md-primary" ng-click="vm.mod(hora)">CALCULAR PORCENTAJE</md-button>
 				</md-card> 

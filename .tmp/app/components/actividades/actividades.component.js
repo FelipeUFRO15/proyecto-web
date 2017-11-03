@@ -7,6 +7,12 @@
     templateUrl: 'app/components/actividades/actividades.html',
     controller: actividadesCtrl,
     controllerAs: 'vm'
+  })
+  .config(function ($mdThemingProvider) {
+    $mdThemingProvider.theme('actividad')
+      .primaryPalette('purple')
+      .accentPalette('pink')
+      .warnPalette('red');
   });
 
   function actividadesCtrl() {

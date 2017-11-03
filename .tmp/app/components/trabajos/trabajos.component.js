@@ -7,6 +7,12 @@
     templateUrl: 'app/components/trabajos/trabajos.html',
     controller: trabajosCtrl,
     controllerAs: 'vm'
+  })
+  .config(function ($mdThemingProvider) {
+    $mdThemingProvider.theme('trabajo')
+      .primaryPalette('purple')
+      .accentPalette('pink')
+      .warnPalette('red');
   });
 
   function trabajosCtrl() {

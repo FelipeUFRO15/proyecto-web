@@ -12,36 +12,28 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/login',
       component: 'login'
     })
-    .state('principal', {
-      url: '/tabs',
-      component: 'myTab'
-    })
     .state('administrador', {
-      url: '/administrator',
+      url: '/user/administrator',
       component: 'administrator'
     })
-    .state('sideBar', {
-      url: '/sideBar',
-      component: 'mySidebar'
-    })
     .state('apuntes', {
-      url: '/apuntes',
+      url: '/user/apuntes',
       component: 'apuntes'
     })
     .state('asignatura', {
-      url: '/asignatura',
+      url: '/user/asignatura',
       component: 'asignatura'
     })
     .state('notas', {
-      url: '/notas',
+      url: '/user/notas',
       component: 'notas'
     })
     .state('actividades', {
-      url: '/actividades',
+      url: '/user/actividades',
       component: 'actividades'
     })
     .state('trabajos', {
-      url: '/trabajos',
+      url: '/user/trabajos',
       component: 'trabajos'
     });
 }

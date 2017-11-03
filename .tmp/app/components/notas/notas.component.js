@@ -7,6 +7,12 @@
     templateUrl: 'app/components/notas/notas.html',
     controller: notasCtrl,
     controllerAs: 'vm'
+  })
+  .config(function ($mdThemingProvider) {
+    $mdThemingProvider.theme('nota')
+      .primaryPalette('purple')
+      .accentPalette('pink')
+      .warnPalette('red');
   });
 
   function notasCtrl() {

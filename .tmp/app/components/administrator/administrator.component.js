@@ -7,6 +7,12 @@
     templateUrl: 'app/components/administrator/administrator.html',
     controller: administratorCtrl,
     controllerAs: 'vm'
+  })
+  .config(function ($mdThemingProvider) {
+    $mdThemingProvider.theme('admin')
+      .primaryPalette('purple')
+      .accentPalette('pink')
+      .warnPalette('red');
   });
 
   function administratorCtrl() {
