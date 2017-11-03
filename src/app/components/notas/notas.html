@@ -1,0 +1,35 @@
+<my-sidebar></my-sidebar>
+<div style="padding-top: 4em; padding-left: 20em" flex-offset="5">
+	<md-content class="md-padding" layout-xs="column" layout="row">
+		<div flex-xs flex-gt-xs="25" layout="column">
+			<md-card>
+				<md-card-title>
+					<md-card-title-text>
+						<span class="md-headline">Agregar Nota</span>
+					</md-card-title-text>
+				</md-card-title>
+				<md-input-container class="md-block" flex-offset="10" flex="80">
+					<label>Nombre de la Nota</label>
+					<input ng-model="nota.nombre">
+				</md-input-container>
+				<md-input-container class="md-block" flex-offset="10" flex="80">
+					<label>Nota</label>
+					<input ng-model="nota.valor">
+				</md-input-container>
+				<md-input-container class="md-block" flex-offset="10" flex="80">
+					<label>Ponderación</label>
+					<input ng-model="nota.ponderacion">
+				</md-input-container>
+				<md-button class="md-raised md-primary" ng-click="vm.addNota(nota)">AÑADIR</md-button>
+			</md-card>
+		</div>
+		<div flex-xs flex-gt-xs="40" layout="column" flex-offset="10">
+			<md-card ng-repeat="nota in vm.notas" layout="column">
+				<center><span class="md-headline asigtitle">{{ nota.nombre }}</span></center>
+				<center><p>Ponderación: {{ nota.ponderacion }}</p></center>
+				<md-divider></md-divider>
+				<center><p> {{ nota.valor }} </p></center>
+			</md-card>
+		</div>
+	</md-content>
+</div>

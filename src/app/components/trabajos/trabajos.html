@@ -1,0 +1,30 @@
+<my-sidebar></my-sidebar>
+<div style="padding-top: 4em; padding-left: 20em" flex-offset="5">
+	<md-content class="md-padding" layout-xs="column" layout="row">
+		<div flex-xs flex-gt-xs="25" layout="column">
+			<md-card>
+				<md-card-title>
+					<md-card-title-text>
+						<span class="md-headline">Agregar Trabajo</span>
+					</md-card-title-text>
+				</md-card-title>
+				<md-input-container class="md-block" flex-offset="10" flex="80">
+					<label>Nombre del Trabajo</label>
+					<input ng-model="trabajo.nombre">
+				</md-input-container>
+				<div flex-gt-xs>
+      				<center><h4>Fecha</h4>
+      			    </center>
+  				  	<md-datepicker ng-model="trabajo.fecha" md-placeholder="Selecciona Fecha" flex-offset="10" flex="80"></md-datepicker>
+    			</div>
+				<md-button class="md-raised md-primary" ng-click="vm.addTrabajo(trabajo)">AÑADIR</md-button>
+			</md-card>
+		</div>
+		<div flex-xs flex-gt-xs="50" layout="column" flex-offset="10">
+			<md-card ng-repeat="trabajo in vm.trabajos" layout="column">
+				<center><span class="md-headline asigtitle">{{ trabajo.nombre }}</span></center>
+				<center><p>{{ trabajo.fecha }}</p></center>
+			</md-card>
+		</div>
+	</md-content>
+</div>

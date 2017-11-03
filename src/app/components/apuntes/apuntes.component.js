@@ -11,6 +11,16 @@
 
   function apuntesCtrl() {
     var vm = this;
-    vm.apunte = 0;
+    vm.apunte = {
+      titulo: '',
+      fecha: '',
+      contenido: ''
+    };
+
+    vm.apuntes = [];
+
+    vm.addApunte = function (modelo) {
+      vm.apuntes.push({titulo: modelo.titulo, fecha: modelo.fecha, contenido: modelo.contenido});
+    };
   }
 })();

@@ -1,31 +1,37 @@
-<div style="padding-top: 4em; padding-left: 20em">
+<my-sidebar></my-sidebar>
+<div style="padding-top: 4em; padding-left: 20em" flex-offset="5">
 	<md-content class="md-padding" layout-xs="column" layout="row">
 		<div flex-xs flex-gt-xs="25" layout="column">
 			<md-card>
 				<md-card-title>
 					<md-card-title-text>
-						<span class="md-headline">Agregar apunte</span>
+						<span class="md-headline">Agregar Apunte</span>
 					</md-card-title-text>
 				</md-card-title>
 				<md-input-container class="md-block" flex-offset="10" flex="80">
-					<label>Título del apunte</label>
-					<input ng-model="asignatura.nombre">
+					<label>Titulo de Apunte</label>
+					<input ng-model="apunte.titulo">
 				</md-input-container>
-				<md-datepicker ng-model="ctrl.myDate" md-placeholder="Fecha del apunte"></md-datepicker>
+				<div flex-gt-xs>
+      				<center><h4>Fecha</h4>
+      			    </center>
+  				  	<md-datepicker ng-model="apunte.fecha" md-placeholder="Selecciona Fecha" flex-offset="10" flex="80"></md-datepicker>
+
+    			</div>
 				<md-input-container class="md-block" flex-offset="10" flex="80">
-					<label>Contenido del apunte</label>
-					<input ng-model="asignatura.docente">
+					<label>Contenido</label>
+					<input ng-model="apunte.contenido">
 				</md-input-container>
-				<md-button class="md-raised md-primary" ng-click="vm.add(asignatura)">AÑADIR</md-button>
+				<md-button class="md-raised md-primary" ng-click="vm.addApunte(apunte)">AÑADIR</md-button>
 			</md-card>
 		</div>
-		<div flex-xs flex-gt-xs="30" flex-offset="25" layout="column">
-			<md-card ng-repeat="asignatura in vm.asignaturas" layout="column">
-				<center><span class="md-headline asigtitle">{{ asignatura.nombre }}</span></center>
+		<div flex-xs flex-gt-xs="50" layout="column" flex-offset="10">
+			<md-card ng-repeat="apunte in vm.apuntes" layout="column">
+				<center><span class="md-headline asigtitle">{{ apunte.titulo }}</span></center>
+				<center><p>{{ apunte.fecha }}</p></center>
 				<md-divider></md-divider>
-				<center><p><strong>Docente:</strong> {{ asignatura.docente }} </p></center>
-				<center><md-button class="md-raised md-primary seemore" >VER CONTENIDO</md-button></center>
+				<center><p> {{ apunte.contenido }} </p></center>
 			</md-card>
 		</div>
-	</md-content> 
+	</md-content>
 </div>

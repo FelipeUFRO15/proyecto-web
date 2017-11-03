@@ -31,5 +31,17 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('asignatura', {
       url: '/asignatura',
       component: 'asignatura'
+    })
+    .state('notas', {
+      url: '/notas',
+      component: 'notas'
+    })
+    .state('actividades', {
+      url: '/actividades',
+      component: 'actividades'
+    })
+    .state('trabajos', {
+      url: '/trabajos',
+      component: 'trabajos'
     });
 }
