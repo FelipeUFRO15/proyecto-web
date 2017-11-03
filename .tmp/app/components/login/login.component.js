@@ -17,6 +17,6 @@
 
   function loginCtrl() {
     var vm = this;
-    vm.imageUser = 'assets/img/svg/user.svg';
+    vm.imageUser = 'assets/iconos/studyappXL.png';
   }
 })();

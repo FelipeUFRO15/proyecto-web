@@ -2,8 +2,8 @@
   'use strict';
 
   angular
-    .module('app')
-    .component('asignatura', {
+  .module('app')
+  .component('asignatura', {
     templateUrl: 'app/components/asignatura/asignatura.html',
     controller: asignaturaCtrl,
     controllerAs: 'vm'
@@ -17,6 +17,7 @@
 
   function asignaturaCtrl() {
     var vm = this;
+    vm.promedio = 6.0;
     vm.horast = 80;
     vm.horasp = 0;
     vm.mod = function (hora) {
