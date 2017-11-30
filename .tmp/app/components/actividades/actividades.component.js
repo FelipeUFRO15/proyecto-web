@@ -22,6 +22,8 @@
       fecha: ''
     };
 
+    vm.hola = 'hola mundo';
+
     vm.actividades = [];
 
     vm.addActividad = function (modelo) {

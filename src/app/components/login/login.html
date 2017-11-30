@@ -25,31 +25,34 @@
 
   <div flex-gt-sm="50" flex>
     <md-content>
-      <center>
-        <h2>Registrarse</h2>
-        <img class="userRegister" ng-src="{{ vm.imageUser }}" class="md-avatar">
-      </center>
-      <md-input-container class="md-block" flex-offset="25" flex="50">
-        <label>Nombre</label>
-        <input>
-      </md-input-container>
-      <md-input-container class="md-block" flex-offset="25" flex="50">
-        <label>Email</label>
-        <input>
-      </md-input-container>
-      <md-input-container class="md-block" flex-offset="25" flex="50">
-        <label>Contraseña</label>
-        <input type="password">
-      </md-input-container>
-      <md-input-container class="md-block" flex-offset="25" flex="50">
-        <label>Repetir Contraseña</label>
-        <input type="password">
-      </md-input-container>
-      <md-input-container class="md-block" flex-offset="25" flex="50">
-        <label>Institución</label>
-        <input>
-      </md-input-container>
-      <center><md-button class="md-raised md-primary loginbutton" ui-sref="add">Registrarse</md-button></center>
+      <form>
+        <center>
+          <h2>Registrarse</h2>
+          <img class="userRegister" ng-src="{{ vm.imageUser }}" class="md-avatar">
+        </center>
+        <md-input-container class="md-block" flex-offset="25" flex="50">
+          <label>Nombre</label>
+          <input>
+        </md-input-container>
+        <md-input-container class="md-block" flex-offset="25" flex="50">
+          <label>Email</label>
+          <input>
+        </md-input-container>
+        <md-input-container class="md-block" flex-offset="25" flex="50">
+          <label>Contraseña</label>
+          <input type="password">
+        </md-input-container>
+        <md-input-container class="md-block" flex-offset="25" flex="50">
+          <label>Repetir Contraseña</label>
+          <input type="password">
+        </md-input-container>
+        <md-input-container class="md-block" flex-offset="25" flex="50">
+          <label>Institución</label>
+          <input>
+        </md-input-container>
+        <center><md-button class="md-raised md-primary loginbutton" ui-sref="add">Registrarse</md-button></center>
+      </form>
+      
     </md-content>
   </div>
 
