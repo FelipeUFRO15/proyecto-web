@@ -9,4 +9,5 @@ angular
       .primaryPalette('indigo')
       .accentPalette('green')
       .warnPalette('pink');
-  });
+  })
+  .constant('API', 'http://localhost:8000/api/');
