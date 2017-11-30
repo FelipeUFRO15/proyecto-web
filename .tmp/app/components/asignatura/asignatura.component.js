@@ -15,13 +15,22 @@
       .warnPalette('red');
   });
 
-  function asignaturaCtrl() {
+  asignaturaCtrl.$inject = ['AsignaturasService'];
+
+  function asignaturaCtrl(AsignaturasService) {
     var vm = this;
     vm.promedio = 6.0;
     vm.horast = 80;
     vm.horasp = 0;
+    vm.asignatura = {};
     vm.mod = function (hora) {
       vm.horasp = (vm.horast * (hora / 100));
     };
+
+    AsignaturasService.get({id: 1}).$promise.then(function (data) {
+      vm.asignatura = data;
+    });
+
+    console.log(vm.asignatura);
   }
 })();

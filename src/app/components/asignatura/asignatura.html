@@ -14,7 +14,7 @@
 				</md-card>
 				</div>
 			</center>
-			
+			{{ vm.asignatura.nombre_asignatura }}
 		</md-content>
 		<md-content class="md-padding" layout-xs="column" layout="column" flex="50" flex-offset="25">
 			<center>
@@ -26,7 +26,7 @@
 					<md-divider></md-divider>
 						<p style="padding-left: 10px;">{{ vm.horasp }} horas necesarias para aprobar</p>
 						<md-input-container  flex="50">
-							<label>Procentaje Asistencia</label>
+							<label>Porcentaje Asistencia</label>
 							<input ng-model="hora" type="number">
 						</md-input-container>
 						<md-button class="md-raised md-primary" ng-click="vm.mod(hora)">CALCULAR PORCENTAJE</md-button>
