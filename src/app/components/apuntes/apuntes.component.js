@@ -15,20 +15,26 @@
       .warnPalette('red');
   });
 
-  function apuntesCtrl() {
+  apuntesCtrl.$inject = ['ApuntesService', 'AsignaturasService'];
+
+  function apuntesCtrl(ApuntesService, AsignaturasService) {
     var vm = this;
     vm.user = {};
     vm.user = JSON.parse(localStorage.getItem('usuarioLogueado'));
-    vm.apunte = {
-      titulo: '',
-      fecha: '',
-      contenido: ''
-    };
+    vm.apuntes = {};
+    vm.asignaturas = {};
 
-    vm.apuntes = [];
+    ApuntesService.query().$promise.then(function (data) {
+      vm.apuntes = data;
+    });
+
+    AsignaturasService.query().$promise.then(function (data) {
+      vm.asignaturas = data;
+    });
 
     vm.addApunte = function (modelo) {
-      vm.apuntes.push({titulo: modelo.titulo, fecha: modelo.fecha, contenido: modelo.contenido});
+      vm.apunte.fecha = '2017-12-01';
+      ApuntesService.save(apunte);
     };
   }
 })();

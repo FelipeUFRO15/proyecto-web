@@ -9,36 +9,24 @@
     controllerAs: 'vm'
   });
 
-  function tabCtrl($log) {
+  tabCtrl.$inject = ['AsignaturasService', '$state'];
+
+  function tabCtrl(AsignaturasService, $state) {
     var vm = this;
     vm.user = {};
     vm.user = JSON.parse(localStorage.getItem('usuarioLogueado'));
-    vm.currentNavItem = 'page1';
+    vm.asignaturaVista = {};
+    vm.asignaturaVista = JSON.parse(localStorage.getItem('asignaturaVista'));
+    vm.currentNavItem = 'tab' + vm.asignaturaVista.id;
 
-    vm.asignaturas = [
-      {
-        nombre: 'DESARROLLO DE APLICACIONES PARA INTERNET',
-        numero: 1,
-        link: 'apuntes'
-      },
-      {
-        nombre: 'REDES',
-        numero: 2,
-        link: 'actividades'
-      },
-      {
-        nombre: 'SISTEMAS DE INFORMACIÓN',
-        numero: 3,
-        link: 'trabajos'
-      }
-    ];
+    vm.asignaturas = {};
 
-    vm.goto = function (page) {
-      $log.log('Goto ' + page);
-    };
+    AsignaturasService.query().$promise.then(function (data) {
+      vm.asignaturas = data;
+    });
 
     vm.agregarAsignatura = function () {
-      $log.log('agregarAsignatura()');
+      $state.go('administrador', ({usuario: vm.user.nombre_usuario}));
     };
   }
 })();

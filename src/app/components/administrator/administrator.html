@@ -28,7 +28,7 @@
 				<center><span class="md-headline asigtitle">{{ asignatura.nombre_asignatura }}</span></center>
 				<md-divider></md-divider>
 				<center><p><strong>Docente: </strong>{{ asignatura.docente.nombre_docente }}</p></center>
-				<center><md-button class="md-raised md-primary seemore" ui-sref="asignatura({asignatura: asignatura.id})" >VER CONTENIDO</md-button></center>
+				<center><md-button class="md-raised md-primary seemore" ng-click="vm.verAsignatura(asignatura)">VER CONTENIDO</md-button></center>
 			</md-card>
 		</div>
 	</md-content> 

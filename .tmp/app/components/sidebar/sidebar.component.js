@@ -19,12 +19,12 @@
     var vm = this;
     vm.user = {};
     vm.user = JSON.parse(localStorage.getItem('usuarioLogueado'));
-    vm.close = function () {
+    /**vm.close = function () {
       // Component lookup should always be available since we are not using `ng-if`
       $mdSidenav('left').close()
         .then(function () {
           $log.debug('close LEFT is done');
         });
-    };
+    };*/
   }
 })();
