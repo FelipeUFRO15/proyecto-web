@@ -13,16 +13,20 @@
 				</md-input-container>
 				<md-input-container class="md-block" flex-offset="10" flex="80">
 					<label>Nombre del Docente</label>
-					<input ng-model="vm.asignatura.docente_id">
+					<md-select ng-model="vm.asignatura.docente_id">
+						<md-option ng-repeat="docente in vm.docentes" value="{{ docente.id }}">
+							{{ docente.nombre_docente }}
+						</md-option>
+					</md-select>
 				</md-input-container>
 				<md-button class="md-raised md-primary" ng-click="vm.add()">AÑADIR</md-button>
 			</md-card>
 		</div>
 		<div flex-xs flex-gt-xs="30" flex-offset="25" layout="column">
 			<md-card ng-repeat="asignatura in vm.asignaturas" layout="column">
-				<center><span class="md-headline asigtitle">{{ asignatura.nombre }}</span></center>
+				<center><span class="md-headline asigtitle">{{ asignatura.nombre_asignatura }}</span></center>
 				<md-divider></md-divider>
-				<center><p><strong>Docente:</strong> {{ asignatura.docente }} </p></center>
+				<center><p><strong>Docente: </strong>{{ asignatura.docente.nombre_docente }}</p></center>
 				<center><md-button class="md-raised md-primary seemore" ui-sref="asignatura" >VER CONTENIDO</md-button></center>
 			</md-card>
 		</div>
