@@ -19,6 +19,8 @@
 
   function asignaturaCtrl(AsignaturasService) {
     var vm = this;
+    vm.user = {};
+    vm.user = JSON.parse(localStorage.getItem('usuarioLogueado'));
     vm.promedio = 6.0;
     vm.horast = 80;
     vm.horasp = 0;

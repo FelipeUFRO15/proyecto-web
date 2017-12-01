@@ -24,11 +24,10 @@
 
   function navbarCtrl(CredentialsService, $rootScope, $state) {
     var vm = this;
+    vm.user = {};
+    vm.user = JSON.parse(localStorage.getItem('usuarioLogueado'));
 
     vm.isLogged = CredentialsService.isLogged();
-
-    vm.usuarioxd = JSON.parse(localStorage.getItem('usuarioLogueado'));
-
     vm.logout = function () {
       CredentialsService.clearCredentials();
       vm.isLogged = false;

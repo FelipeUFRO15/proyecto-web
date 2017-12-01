@@ -11,6 +11,8 @@
 
   function tabCtrl($log) {
     var vm = this;
+    vm.user = {};
+    vm.user = JSON.parse(localStorage.getItem('usuarioLogueado'));
     vm.currentNavItem = 'page1';
 
     vm.asignaturas = [
