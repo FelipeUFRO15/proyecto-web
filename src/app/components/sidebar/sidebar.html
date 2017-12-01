@@ -1,22 +1,19 @@
 <md-sidenav
 	class="md-sidenav-left"
 	md-component-id="left"
-	md-is-locked-open="$mdMedia('gt-md')"
+	md-is-locked-open="true"
 	md-whiteframe="4"
-	style="height:100%; width: 20%; position: fixed; margin-top: 4em"
+	style="height:100%; width: 20%; position: fixed; margin-top: 7em"
 	md-theme="sideBar">
 
 	<md-toolbar>
 		<h1 class="md-toolbar-tools">Opciones de asignatura</h1>
 	</md-toolbar>
 	<md-content layout-padding>
-		<md-button ng-click="close()" class="md-primary" hide-gt-md>
-		  Cerrar
-		</md-button>
-		<p hide show-gt-md ui-sref="actividades">Actividades</p><md-divider></md-divider>
-		<p hide show-gt-md ui-sref="apuntes">Apuntes</p><md-divider></md-divider>
-		<p hide show-gt-md ui-sref="notas">Notas</p><md-divider></md-divider>
-		<p hide show-gt-md ui-sref="trabajos">Trabajos</p><md-divider></md-divider>
-		<p hide show-gt-md ui-sref="asignatura">Detalles</p>
+		<p show-gt-md ui-sref="actividades({usuario: vm.user.nombre_usuario})">Actividades</p><md-divider></md-divider>
+		<p show-gt-md ui-sref="apuntes({usuario: vm.user.nombre_usuario})">Apuntes</p><md-divider></md-divider>
+		<p show-gt-md ui-sref="notas({usuario: vm.user.nombre_usuario})">Notas</p><md-divider></md-divider>
+		<p show-gt-md ui-sref="trabajos({usuario: vm.user.nombre_usuario})">Trabajos</p><md-divider></md-divider>
+		<p show-gt-md ui-sref="asignatura({usuario: vm.user.nombre_usuario})">Detalles</p>
 	</md-content>
 </md-sidenav>

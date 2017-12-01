@@ -10,26 +10,30 @@
 					</md-card-title-text>
 				</md-card-title>
 				<md-input-container class="md-block" flex-offset="10" flex="80">
-					<label>Nombre de la Nota</label>
-					<input ng-model="nota.nombre">
-				</md-input-container>
-				<md-input-container class="md-block" flex-offset="10" flex="80">
 					<label>Nota</label>
-					<input ng-model="nota.valor">
+					<input ng-model="vm.nota.nota">
 				</md-input-container>
 				<md-input-container class="md-block" flex-offset="10" flex="80">
 					<label>Ponderación</label>
-					<input ng-model="nota.ponderacion">
+					<input ng-model="vm.nota.ponderacion">
+				</md-input-container>
+				<md-input-container class="md-block" flex-offset="10" flex="80">
+					<label>Actividad</label>
+					<md-select ng-model="vm.nota.actividad_id">
+						<md-option ng-repeat="actividad in vm.actividades" value="{{ actividad.id }}">
+							{{ actividad.nombre_actividad }}
+						</md-option>
+					</md-select>
 				</md-input-container>
 				<md-button class="md-raised md-primary" ng-click="vm.addNota(nota)">AÑADIR</md-button>
 			</md-card>
 		</div>
 		<div flex-xs flex-gt-xs="40" layout="column" flex-offset="10">
 			<md-card ng-repeat="nota in vm.notas" layout="column">
-				<center><span class="md-headline asigtitle">{{ nota.nombre }}</span></center>
-				<center><p>Ponderación: {{ nota.ponderacion }}</p></center>
+				<center><span class="md-headline asigtitle">{{ nota.actividad.nombre_actividad }}</span></center>
+				<center><p>Nota: {{ nota.nota }} </p></center>
+				<center><p>Ponderación: {{ nota.ponderacion }}%</p></center>
 				<md-divider></md-divider>
-				<center><p> {{ nota.valor }} </p></center>
 			</md-card>
 		</div>
 	</md-content>

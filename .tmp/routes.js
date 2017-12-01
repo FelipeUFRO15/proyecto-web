@@ -20,7 +20,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider, $ht
       isPrivate: true
     })
     .state('apuntes', {
-      url: '/:usuario/:asignatura/apuntes',
+      url: '/:usuario/apuntes',
       component: 'apuntes',
       isPrivate: true
     })
@@ -30,17 +30,17 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider, $ht
       isPrivate: true
     })
     .state('notas', {
-      url: '/:usuario/:asignatura/notas',
+      url: '/:usuario/notas',
       component: 'notas',
       isPrivate: true
     })
     .state('actividades', {
-      url: '/:usuario/:asignatura/actividades',
+      url: '/:usuario/actividades',
       component: 'actividades',
       isPrivate: true
     })
     .state('trabajos', {
-      url: '/:usuario/:asignatura/trabajos',
+      url: '/:usuario/trabajos',
       component: 'trabajos',
       isPrivate: true
     });

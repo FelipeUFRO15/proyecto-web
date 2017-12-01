@@ -1,4 +1,4 @@
-<!--my-sidebar></my-sidebar-->
+<my-sidebar></my-sidebar>
 <my-tab></my-tab>
 <div style="padding-top: 4em; padding-left: 20em" flex-offset="5" md-theme="apunte">
 	<md-content class="md-padding" layout-xs="column" layout="row">
@@ -11,27 +11,34 @@
 				</md-card-title>
 				<md-input-container class="md-block" flex-offset="10" flex="80">
 					<label>Titulo de Apunte</label>
-					<input ng-model="apunte.titulo">
+					<input ng-model="vm.apunte.titulo_apunte">
+				</md-input-container>
+				<md-input-container class="md-block" flex-offset="10" flex="80">
+					<label>Asignatura</label>
+					<md-select ng-model="vm.apunte.asignatura_id">
+						<md-option ng-repeat="asignatura in vm.asignaturas" value="{{ asignatura.id }}">
+							{{ asignatura.nombre_asignatura }}
+						</md-option>
+					</md-select>
+				</md-input-container>
+				<md-input-container class="md-block" flex-offset="10" flex="80">
+					<label>Contenido</label>
+					<textarea rows="4" ng-model="vm.apunte.contenido_apunte"></textarea>
 				</md-input-container>
 				<div flex-gt-xs>
       				<center><h4>Fecha</h4>
       			    </center>
-  				  	<md-datepicker ng-model="apunte.fecha" md-placeholder="Selecciona Fecha" flex-offset="10" flex="80"></md-datepicker>
-
+  				  	<md-datepicker ng-model="vm.apunte.fecha_apunte" md-placeholder="Selecciona Fecha" flex-offset="10" flex="80"></md-datepicker>
     			</div>
-				<md-input-container class="md-block" flex-offset="10" flex="80">
-					<label>Contenido</label>
-					<input ng-model="apunte.contenido">
-				</md-input-container>
 				<md-button class="md-raised md-primary" ng-click="vm.addApunte(apunte)">AÑADIR</md-button>
 			</md-card>
 		</div>
 		<div flex-xs flex-gt-xs="50" layout="column" flex-offset="10">
 			<md-card ng-repeat="apunte in vm.apuntes" layout="column">
-				<center><span class="md-headline asigtitle">{{ apunte.titulo }}</span></center>
-				<center><p>{{ apunte.fecha }}</p></center>
+				<center><span class="md-headline asigtitle">{{ apunte.titulo_apunte }}</span></center>
+				<center><p>{{ apunte.fecha_apunte }}</p></center>
 				<md-divider></md-divider>
-				<center><p> {{ apunte.contenido }} </p></center>
+				<center><p> {{ apunte.contenido_apunte }} </p></center>
 			</md-card>
 		</div>
 	</md-content>

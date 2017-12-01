@@ -21,6 +21,10 @@
     var vm = this;
     vm.user = {};
     vm.user = JSON.parse(localStorage.getItem('usuarioLogueado'));
+    vm.asignaturaVista = {};
+    vm.asignaturaVista = JSON.parse(localStorage.getItem('asignaturaVista'));
+
+    
     vm.promedio = 6.0;
     vm.horast = 80;
     vm.horasp = 0;

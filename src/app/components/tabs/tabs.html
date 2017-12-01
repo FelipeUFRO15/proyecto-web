@@ -1,13 +1,12 @@
-
-
 <div ng-cloak style="padding-top: 3em">
   <md-content class="md-padding">
     <md-nav-bar
       md-no-ink-bar="disableInkBar"
       md-selected-nav-item="currentNavItem"
       nav-bar-aria-label="navigation links">
-      <md-nav-item ng-repeat="asignatura in vm.asignaturas" md-nav-sref="{{ asignatura.link }}" name="tab{{ asignatura.numero }}">
-        {{ asignatura.nombre }}
+      <!-- md-nav-sref="apuntes({usuario: vm.user.nombre_usuario, asignatura: asignatura.nombre_asignatura})" -->
+      <md-nav-item ng-repeat="asignatura in vm.asignaturas" md-nav-sref="apuntes({usuario: vm.user.nombre_usuario, asignatura: asignatura.nombre_asignatura })" ng-click="irAsignatura(asignatura)" name="tab{{ asignatura.id }}">
+        {{ asignatura.nombre_asignatura }}
       <!-- these require actual routing with ui-router or ng-route, so they
       won't work in the demo
       <md-nav-item md-nav-href="#page4" name="page5">Page Four</md-nav-item>
@@ -21,4 +20,3 @@
     </md-nav-bar>
   </md-content>
 </div>
-

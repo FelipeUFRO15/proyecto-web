@@ -15,9 +15,9 @@
       .warnPalette('red');
   });
 
-  administratorCtrl.$inject = ['AsignaturasService', 'DocenteService'];
+  administratorCtrl.$inject = ['AsignaturasService', 'DocenteService', '$state'];
 
-  function administratorCtrl(AsignaturasService, DocenteService) {
+  function administratorCtrl(AsignaturasService, DocenteService, $state) {
     var vm = this;
     vm.user = {};
     vm.user = JSON.parse(localStorage.getItem('usuarioLogueado'));
@@ -37,6 +37,9 @@
       AsignaturasService.save(vm.asignatura);
     };
 
-
+    vm.verAsignatura = function (asignatura) {
+      localStorage.setItem('asignaturaVista', JSON.stringify(asignatura));
+      $state.go('asignatura', ({usuario: vm.user.nombre_usuario, asignatura: asignatura.nombre_asignatura}));
+    }
   }
 })();
