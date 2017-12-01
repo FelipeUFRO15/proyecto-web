@@ -27,6 +27,7 @@
     var usuario = {};
     var user = {};
 
+
     vm.login = function (credentials) {
       LoginService.save(credentials, function (data) {
         if(data.token) {
@@ -37,10 +38,12 @@
 
           ObtenerUsuario.get().$promise.then(function (data) {
             user = data.user;
+            console.log(user);
             console.log('Email: ' + user.email + ' nombre: ' + user.nombre_usuario);
-            localStorage.setItem('usuarioLogueado', user);
+            localStorage.setItem('usuarioLogueado', JSON.stringify(data.user));
+            console.log(localStorage.getItem('usuarioLogueado'));
             var local = localStorage.getItem('usuarioLogueado');
-            console.log('Local: ' + local.email);
+            console.log(JSON.parse(local));
             //JSON.stringify(data)
             $rootScope.$emit('logueado', user);
             $state.go('administrador', ({usuario: user.nombre_usuario}));

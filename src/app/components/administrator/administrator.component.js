@@ -21,7 +21,7 @@
     var vm = this;
     vm.user = {};
 
-    $rootScope.$on('logueado', function (user) {
+    $rootScope.$on('logueado', function (event, user) {
       console.log('Recibido: ' + user);
       vm.user = user;
       console.log('Guardado: ' + vm.user);
