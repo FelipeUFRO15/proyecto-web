@@ -17,6 +17,8 @@
 
   function actividadesCtrl() {
     var vm = this;
+    vm.user = {};
+    vm.user = JSON.parse(localStorage.getItem('usuarioLogueado'));
     vm.actividad = {
       nombre: '',
       fecha: ''

@@ -7,7 +7,7 @@
           <img class="userLogin" ng-src="{{ vm.imageUser }}" class="md-avatar">
         </center>
         <form ng-submit="vm.login(vm.credentials)">
-          <span ng-if="vm.loginError" style="color: red">campos incorrectos</span>
+          <center><span ng-if="vm.loginError" style="color: red">campos incorrectos</span></center>
           <md-input-container class="md-block" flex-offset="25" flex="50">
             <label>Email</label>
             <input ng-model="vm.credentials.email" type="text" required>

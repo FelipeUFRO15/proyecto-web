@@ -21,7 +21,6 @@
     var vm = this;
     vm.user = {};
     vm.user = JSON.parse(localStorage.getItem('usuarioLogueado'));
-    console.log('Usuario logueado: ' + vm.user.nombre_usuario);
   
     vm.add = function () {
       console.log('Guardado: ' + vm.user);

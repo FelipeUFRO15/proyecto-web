@@ -17,6 +17,8 @@
 
   function apuntesCtrl() {
     var vm = this;
+    vm.user = {};
+    vm.user = JSON.parse(localStorage.getItem('usuarioLogueado'));
     vm.apunte = {
       titulo: '',
       fecha: '',
