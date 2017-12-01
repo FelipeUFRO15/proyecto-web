@@ -39,11 +39,13 @@
             user = data.user;
             console.log('Email: ' + user.email + ' nombre: ' + user.nombre_usuario);
             localStorage.setItem('usuarioLogueado', user);
-            console.log('Local: ' + localStorage.getItem('usuarioLogueado'));
+            var local = localStorage.getItem('usuarioLogueado');
+            console.log('Local: ' + local.email);
             //JSON.stringify(data)
+            $rootScope.$emit('logueado', user);
+            $state.go('administrador', ({usuario: user.nombre_usuario}));
           });
 
-          $state.go('administrador', ({usuario: usuario[0]}));
         }else{
           vm.loginError = true;
         }        

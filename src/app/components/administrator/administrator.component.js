@@ -15,12 +15,20 @@
       .warnPalette('red');
   });
 
-  administratorCtrl.$inject = ['AsignaturasService'];
+  administratorCtrl.$inject = ['AsignaturasService', '$rootScope'];
 
-  function administratorCtrl(AsignaturasService) {
+  function administratorCtrl(AsignaturasService, $rootScope) {
     var vm = this;
+    vm.user = {};
+
+    $rootScope.$on('logueado', function (user) {
+      console.log('Recibido: ' + user);
+      vm.user = user;
+      console.log('Guardado: ' + vm.user);
+    });
 
     vm.add = function () {
+      console.log('Guardado: ' + vm.user);
       vm.usuario = localStorage.getItem('usuarioLogueado');
       console.log('Usuario: ' + vm.usuario.email);
       AsignaturasService.save(vm.asignatura);
