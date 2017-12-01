@@ -15,9 +15,9 @@
       .warnPalette('red');
   });
 
-  loginCtrl.$inject = ['LoginService', 'CredentialsService', '$state', '$rootScope'];
+  loginCtrl.$inject = ['LoginService', 'CredentialsService', '$state', '$rootScope', 'RegisterService'];
 
-  function loginCtrl(LoginService, CredentialsService, $state, $rootScope) {
+  function loginCtrl(LoginService, CredentialsService, $state, $rootScope, RegisterService) {
     var vm = this;
     vm.imageUser = 'assets/iconos/studyappXL.png';
 
@@ -38,5 +38,13 @@
         console.log(error);
       });
     };
+
+    vm.registrar = function (usuario) {
+      vm.usuario.institucion_id = 1;
+      vm.usuario.url_foto_usuario = 'Sin Imagen';
+      console.log(usuario);
+      RegisterService.save(usuario);
+      $state.go('login')
+    }
   }
 })();

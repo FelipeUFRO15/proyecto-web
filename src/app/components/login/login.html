@@ -32,27 +32,18 @@
         </center>
         <md-input-container class="md-block" flex-offset="25" flex="50">
           <label>Nombre</label>
-          <input>
+          <input ng-model="vm.usuario.nombre_usuario">
         </md-input-container>
         <md-input-container class="md-block" flex-offset="25" flex="50">
           <label>Email</label>
-          <input>
+          <input ng-model="vm.usuario.email">
         </md-input-container>
         <md-input-container class="md-block" flex-offset="25" flex="50">
           <label>Contraseña</label>
-          <input type="password">
+          <input ng-model="vm.usuario.password" type="password">
         </md-input-container>
-        <md-input-container class="md-block" flex-offset="25" flex="50">
-          <label>Repetir Contraseña</label>
-          <input type="password">
-        </md-input-container>
-        <md-input-container class="md-block" flex-offset="25" flex="50">
-          <label>Institución</label>
-          <input>
-        </md-input-container>
-        <center><md-button class="md-raised md-primary loginbutton" ui-sref="add">Registrarse</md-button></center>
+        <center><md-button class="md-raised md-primary loginbutton" ng-click="vm.registrar(vm.usuario)">Registrarse</md-button></center>
       </form>
-      
     </md-content>
   </div>
 
