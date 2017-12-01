@@ -23,8 +23,6 @@
 
     vm.loginError = false;
     vm.credentials = {};
-    var usuarios = {};
-    var usuario = {};
     var user = {};
 
 
@@ -34,18 +32,9 @@
           CredentialsService.setToken(data.token);
           CredentialsService.setUser(data.email);
           $rootScope.$emit('isLogin');
-          var usuario = data.email.split('@');
-
           ObtenerUsuario.get().$promise.then(function (data) {
             user = data.user;
-            console.log(user);
-            console.log('Email: ' + user.email + ' nombre: ' + user.nombre_usuario);
             localStorage.setItem('usuarioLogueado', JSON.stringify(data.user));
-            console.log(localStorage.getItem('usuarioLogueado'));
-            var local = localStorage.getItem('usuarioLogueado');
-            console.log(JSON.parse(local));
-            //JSON.stringify(data)
-            $rootScope.$emit('logueado', user);
             $state.go('administrador', ({usuario: user.nombre_usuario}));
           });
 

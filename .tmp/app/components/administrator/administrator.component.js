@@ -15,18 +15,14 @@
       .warnPalette('red');
   });
 
-  administratorCtrl.$inject = ['AsignaturasService', '$rootScope'];
+  administratorCtrl.$inject = ['AsignaturasService'];
 
-  function administratorCtrl(AsignaturasService, $rootScope) {
+  function administratorCtrl(AsignaturasService) {
     var vm = this;
     vm.user = {};
-
-    $rootScope.$on('logueado', function (event, user) {
-      console.log('Recibido: ' + user);
-      vm.user = user;
-      console.log('Guardado: ' + vm.user);
-    });
-
+    vm.user = JSON.parse(localStorage.getItem('usuarioLogueado'));
+    console.log('Usuario logueado: ' + vm.user.nombre_usuario);
+  
     vm.add = function () {
       console.log('Guardado: ' + vm.user);
       vm.usuario = localStorage.getItem('usuarioLogueado');
