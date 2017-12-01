@@ -9,13 +9,13 @@
 				</md-card-title>
 				<md-input-container class="md-block" flex-offset="10" flex="80">
 					<label>Nombre de la Asignatura</label>
-					<input ng-model="asignatura.nombre">
+					<input ng-model="vm.asignatura.nombre_asignatura">
 				</md-input-container>
 				<md-input-container class="md-block" flex-offset="10" flex="80">
 					<label>Nombre del Docente</label>
-					<input ng-model="asignatura.docente">
+					<input ng-model="vm.asignatura.docente_id">
 				</md-input-container>
-				<md-button class="md-raised md-primary" ng-click="vm.add(asignatura)">AÑADIR</md-button>
+				<md-button class="md-raised md-primary" ng-click="vm.add()">AÑADIR</md-button>
 			</md-card>
 		</div>
 		<div flex-xs flex-gt-xs="30" flex-offset="25" layout="column">

@@ -15,32 +15,32 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider, $ht
       isPrivate: false
     })
     .state('administrador', {
-      url: '/user/administrator',
+      url: '/:usuario/administrator',
       component: 'administrator',
       isPrivate: true
     })
     .state('apuntes', {
-      url: '/user/apuntes',
+      url: '/:usuario/:asignatura/apuntes',
       component: 'apuntes',
       isPrivate: true
     })
     .state('asignatura', {
-      url: '/user/asignatura',
+      url: '/:usuario/:asignatura',
       component: 'asignatura',
       isPrivate: true
     })
     .state('notas', {
-      url: '/user/notas',
+      url: '/:usuario/:asignatura/notas',
       component: 'notas',
       isPrivate: true
     })
     .state('actividades', {
-      url: '/user/actividades',
+      url: '/:usuario/:asignatura/actividades',
       component: 'actividades',
       isPrivate: true
     })
     .state('trabajos', {
-      url: '/user/trabajos',
+      url: '/:usuario/:asignatura/trabajos',
       component: 'trabajos',
       isPrivate: true
     });

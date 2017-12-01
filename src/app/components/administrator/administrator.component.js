@@ -15,18 +15,17 @@
       .warnPalette('red');
   });
 
-  function administratorCtrl() {
+  administratorCtrl.$inject = ['AsignaturasService'];
+
+  function administratorCtrl(AsignaturasService) {
     var vm = this;
 
-    vm.asignatura = {
-      nombre: '',
-      docente: ''
+    vm.add = function () {
+      vm.usuario = localStorage.getItem('usuarioLogueado');
+      console.log('Usuario: ' + vm.usuario.email);
+      AsignaturasService.save(vm.asignatura);
     };
 
-    vm.asignaturas = [];
 
-    vm.add = function (modelo) {
-      vm.asignaturas.push({nombre: modelo.nombre, docente: modelo.docente});
-    };
   }
 })();

@@ -3,7 +3,7 @@
 
   angular
   .module('app')
-  .service('TrabajosService', trabajoservice);
+  .service('TrabajosService', trabajosService);
 
   trabajosService.$inject = ['$resource', 'API'];
 
