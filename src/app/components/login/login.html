@@ -42,6 +42,14 @@
           <label>Contraseña</label>
           <input ng-model="vm.usuario.password" type="password">
         </md-input-container>
+        <md-input-container class="md-block" flex-offset="25" flex="50">
+          <label>Institucion</label>
+          <md-select ng-model="vm.usuario.institucion_id">
+            <md-option ng-repeat="institucion in vm.instituciones" value="{{ institucion.id }}">
+              {{ institucion.nombre_institucion }}
+            </md-option>
+          </md-select>
+        </md-input-container>
         <center><md-button class="md-raised md-primary loginbutton" ng-click="vm.registrar(vm.usuario)">Registrarse</md-button></center>
       </form>
     </md-content>

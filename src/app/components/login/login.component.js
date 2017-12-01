@@ -15,16 +15,20 @@
       .warnPalette('red');
   });
 
-  loginCtrl.$inject = ['LoginService', 'CredentialsService', '$state', '$rootScope', 'RegisterService', 'ObtenerUsuario'];
+  loginCtrl.$inject = ['LoginService', 'CredentialsService', '$state', '$rootScope', 'RegisterService', 'ObtenerUsuario', 'InstitucionService'];
 
-  function loginCtrl(LoginService, CredentialsService, $state, $rootScope, RegisterService, ObtenerUsuario) {
+  function loginCtrl(LoginService, CredentialsService, $state, $rootScope, RegisterService, ObtenerUsuario, InstitucionService) {
     var vm = this;
     vm.imageUser = 'assets/iconos/studyappXL.png';
 
     vm.loginError = false;
     vm.credentials = {};
     var user = {};
-
+    vm.instituciones = {}; 
+    
+    InstitucionService.query().$promise.then(function (data) {
+      vm.instituciones = data;
+    });
 
     vm.login = function (credentials) {
       LoginService.save(credentials, function (data) {
@@ -47,11 +51,13 @@
     };
 
     vm.registrar = function (usuario) {
-      vm.usuario.institucion_id = 1;
-      vm.usuario.url_foto_usuario = 'Sin Imagen';
+      //vm.usuario.institucion_id = 1;
+      vm.usuario.url_foto_usuario = 'https://images.onlinelabels.com/images/clip-art/acspike/acspike_male_user_icon.png';
       console.log(usuario);
       RegisterService.save(usuario);
       $state.go('login')
     }
+
+    
   }
 })();
