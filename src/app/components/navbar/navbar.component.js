@@ -19,7 +19,24 @@
       .warnPalette('pink');
   });
 
-  function navbarCtrl() {
-    // var vm = this;
+  navbarCtrl.$inject = ['CredentialsService', '$rootScope', '$state'];
+
+
+  function navbarCtrl(CredentialsService, $rootScope, $state) {
+    var vm = this;
+
+    vm.isLogged = CredentialsService.isLogged();
+
+    vm.usuarioxd = JSON.parse(localStorage.getItem('usuarioLogueado'));
+
+    vm.logout = function () {
+      CredentialsService.clearCredentials();
+      vm.isLogged = false;
+      $state.go('login');
+    }
+
+    $rootScope.$on('isLogin', function () {
+      vm.isLogged = true;
+    })
   }
 })();
