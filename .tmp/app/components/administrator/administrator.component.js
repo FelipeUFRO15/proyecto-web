@@ -15,18 +15,25 @@
       .warnPalette('red');
   });
 
-  administratorCtrl.$inject = ['AsignaturasService'];
+  administratorCtrl.$inject = ['AsignaturasService', 'DocenteService'];
 
-  function administratorCtrl(AsignaturasService) {
+  function administratorCtrl(AsignaturasService, DocenteService) {
     var vm = this;
     vm.user = {};
     vm.user = JSON.parse(localStorage.getItem('usuarioLogueado'));
-    console.log('Usuario logueado: ' + vm.user.nombre_usuario);
+    vm.asignaturas = {};
+    vm.docentes = {};
+
+    AsignaturasService.query().$promise.then(function (data) {
+      vm.asignaturas = data;
+    });
+
+    DocenteService.query().$promise.then(function (data) {
+      vm.docentes = data;
+    });
   
     vm.add = function () {
-      console.log('Guardado: ' + vm.user);
-      vm.usuario = localStorage.getItem('usuarioLogueado');
-      console.log('Usuario: ' + vm.usuario.email);
+      vm.asignatura.usuario_id = vm.user.id;
       AsignaturasService.save(vm.asignatura);
     };
 
